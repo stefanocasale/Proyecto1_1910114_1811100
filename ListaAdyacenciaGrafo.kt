@@ -2,7 +2,7 @@ class ListaAdyacenciaGrafo<T> : Grafo<T> {
     private val adyacencias: MutableMap<T, MutableList<T>> = mutableMapOf()
 
     override fun contiene(v: T): Boolean { // STEFANO
-        return false
+        return v in adyacencias
     }
 
     override fun agregarVertice(v: T): Boolean { // STEFANO
