@@ -1,3 +1,4 @@
+// Implementación de un grafo utilizando una lista de adyacencia
 class ListaAdyacenciaGrafo<T> : Grafo<T> {
     private val adyacencias: MutableMap<T, MutableList<T>> = mutableMapOf()
 
