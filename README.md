@@ -6,17 +6,17 @@
 
 # Pasos de Ejecucion
 1. Instalar Kotlin:
-    Desde tu terminal de WSL ejecuta el siguiente comando:
-        sudo apt install kotlin
+    - Desde tu terminal de WSL ejecuta el siguiente comando:
+        - sudo apt install kotlin
 2. Ubica tu entorno:
-    Desde tu terminal de WSL ejecuta el siguiente comando:
-        cd ubicacion/de/tu/entorno
+    - Desde tu terminal de WSL ejecuta el siguiente comando:
+        - cd ubicacion/de/tu/entorno
 3. Compila todos los archivos .kt que estan en la misma carpeta:
-    Desde tu terminal de WSL ejecuta el siguiente comando:
-        kotlinc *.kt -d out -include-runtime
+    - Desde tu terminal de WSL ejecuta el siguiente comando:
+        - kotlinc *.kt -d out -include-runtime
 4. Ejecuta Main.kt:
-    Desde tu terminal de WSL ejecuta el siguiente comando:
-        kotlin -cp out MainKt
+    - Desde tu terminal de WSL ejecuta el siguiente comando:
+        - kotlin -cp out MainKt
 
 
 # Decisiones de Implementacion
