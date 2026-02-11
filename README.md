@@ -9,10 +9,10 @@ Carnets: 1910114, 1811100
 2. Ubica tu entorno:
     Desde tu terminal de WSL ejecuta el siguiente comando:
         cd ubicacion/de/tu/entorno
-3. Compila todos los archivos .kt que estan en la misma carpeta
+3. Compila todos los archivos .kt que estan en la misma carpeta:
     Desde tu terminal de WSL ejecuta el siguiente comando:
         kotlinc *.kt -d out -include-runtime
-4. Ejecuta Main.kt
+4. Ejecuta Main.kt:
     Desde tu terminal de WSL ejecuta el siguiente comando:
         kotlin -cp out MainKt
 
