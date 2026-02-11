@@ -15,6 +15,19 @@ Carnets: 1910114, 1811100
 
 - obtenerArcosEntrada(v: T): List<T>: Retorna la lista de vértices que llegan a v. Si v no existe, entonces el método regresará una lista vacía. Itera sobre todos los vértices, para cada uno accede a su lista de adyacencias, si v esta en esa lista, agrega el vértice a la lista que finalmente se retorna.
 
-- eliminarVertice(v: T): Boolean:
+- eliminarVertice(v: T): Boolean: Verifica si el nodo v está en la estructura, si no está entonces la función no hace nada. En caso contrario, elimina el nodo v y los arcos asociados, se usa un ciclo para limpiar de las demás listas las referencias que estaban asociadas al nodo eliminado.
 
-- subgrafo(vertices: Collection<T>): Grafo<T>:
+- subgrafo(vertices: Collection<T>): Grafo<T>: Se crea una nueva instancia de grafo que será la base para agregar los vértices y los arcos correspondientes a los elementos que se desea tener en el subgrafo deseado. Los vértices se recorren uno a uno y solo se agregan aquellos que interesan, luego se agregan las referencias entre los vértices y se conectan entre ellos si estaban en el original inicialmente.
+
+# Tabla de complejidad computacional (Big O)
+
+| Método               | Complejidad |
+|----------------------|-------------|
+| contiene(v)          | O(1)        |
+| agregarVertice(v)    | O(1)        |
+| tamano()             | O(1)        |
+| conectar(d, h)       | O(S)        |
+| obtenerArcosSalida   | O(1)        |
+| obtenerArcosEntrada  | O(V + E)    |
+| eliminarVertice(v)   | O(V + E)    |
+| subgrafo(vertices)   | O(Vs + Es)  |

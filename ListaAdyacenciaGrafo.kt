@@ -65,11 +65,54 @@ class ListaAdyacenciaGrafo<T> : Grafo<T> {
         return entrada
     }
 
-    override fun eliminarVertice(v: T): Boolean { 
-        return false 
+    override fun eliminarVertice(v: T): Boolean {
+
+        // Verifica si el vértice existe
+        if (v !in adyacencias) {
+            return false // Si no existe retorna false
+        }
+
+        adyacencias.remove(v) // Elimina el vértice v y los arcos asociados
+
+        // Recorre los demás vértices
+        for (entrada in adyacencias) {
+            val listaSucesores = entrada.value
+
+            // Elimina las referencias al vértice v en los vértices asociados
+            if (v in listaSucesores) {
+                listaSucesores.remove(v)
+            }
+        }
+
+        return true
     }
 
-    override fun subgrafo(vertices: Collection<T>): Grafo<T> { 
-        return ListaAdyacenciaGrafo()
+    override fun subgrafo(vertices: Collection<T>): Grafo<T> {
+
+        // Creamos una nueva instancia de grafo
+        val grafoNuevo = ListaAdyacenciaGrafo<T>()
+
+        // Se recorre la lista de vértices que interesan
+        for (v in vertices) {
+            if (this.contiene(v)) {
+                grafoNuevo.agregarVertice(v) // Se agregan vértices solo si estaban en el original
+            }
+        }
+
+        // Se recorren de nuevo los vértices viendo sus arcos
+        for (v in vertices) {
+            if (this.contiene(v)) {
+                // Obtenemos los sucesores de cada vértice en el grafo original
+                val sucesoresOriginales = obtenerArcosSalida(v)
+
+                for (sucesor in sucesoresOriginales) {
+                    // Solo se crea el arco si el destino también está en el subgrafo
+                    if (grafoNuevo.contiene(sucesor)) {
+                        grafoNuevo.conectar(v, sucesor)
+                    }
+                }
+            }
+        }
+        return grafoNuevo // Retorna la instancia con los nuevos datos
     }
 }
