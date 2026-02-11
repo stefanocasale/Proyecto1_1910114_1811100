@@ -1,3 +1,4 @@
+// Interfaz
 interface Grafo<T> {
     fun agregarVertice(v: T): Boolean
     fun eliminarVertice(v: T): Boolean
