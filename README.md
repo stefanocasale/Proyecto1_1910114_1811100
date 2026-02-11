@@ -2,6 +2,26 @@
 Nombres: Stefano Casale, Enyerber Silva
 Carnets: 1910114, 1811100
 
+# Pasos de Ejecucion
+1. Instalar Kotlin:
+    Desde tu terminal de WSL ejecuta el siguiente comando:
+        sudo apt install kotlin
+2. Ubica tu entorno:
+    Desde tu terminal de WSL ejecuta el siguiente comando:
+        cd ubicacion/de/tu/entorno
+3. Compila todos los archivos .kt que estan en la misma carpeta
+    Desde tu terminal de WSL ejecuta el siguiente comando:
+        kotlinc *.kt -d out -include-runtime
+4. Ejecuta Main.kt
+    Desde tu terminal de WSL ejecuta el siguiente comando:
+        kotlin -cp out MainKt
+
+
+# Decisiones de Implementacion
+En este proyecto se tomo la decision de usar MutableMap<T, MutableList<T>> debido a que el mapa representa cada vértice con su lista de sucesores, cumpliendo asi con la representacion de un grafo dirigido por listas de adyacencias. Ademas, fue recomendado a traves del mismo enunciado del proyecto. 
+
+Decidimos agregar un archivo "Main.kt" donde realizamos pruebas para validar y verificar el funcionamiento de cada uno de los métodos implementados para este proyecto. De esta manera cualquier usuario puede ejecutarlo y comprobarlo
+
 # Explicación de Métodos
 - contiene(v: T): Boolean: Le indica al usuario si un vertice ya es parte de la lista de adyacencias.
 
@@ -21,13 +41,36 @@ Carnets: 1910114, 1811100
 
 # Tabla de complejidad computacional (Big O)
 
-| Método               | Complejidad |
-|----------------------|-------------|
-| contiene(v)          | O(1)        |
-| agregarVertice(v)    | O(1)        |
-| tamano()             | O(1)        |
-| conectar(d, h)       | O(S)        |
-| obtenerArcosSalida   | O(1)        |
-| obtenerArcosEntrada  | O(V + E)    |
-| eliminarVertice(v)   | O(V + E)    |
-| subgrafo(vertices)   | O(Vs + Es)  |
+|         Método         |   Complejidad   |              Descipcción
+|------------------------|-----------------|---------------------------------------
+| contiene(v)            |       O(1)      | Accede a un elemento del mapa
+|                        |                 |
+| agregarVertice(v)      |       O(1)      | Inserta un elemento al mapa
+|                        |                 |
+| tamano(v)              |       O(1)      | Accede a un puntero del mapa
+|                        |                 |
+|                        |                 | Recorre toda la lista asociada
+| conectar(desde, hasta) | O(grado(desde)) | a desde, verificando
+|                        |                 | duplicados
+|                        |                 |
+| obtenerArcosSalida(v)  |       O(1)      | Devuelve la lista asociada a v
+|                        |                 |
+|                        |                 | Recorre todos los vértices y accede
+| obtenerArcosEntrada(v) |     O(V + E)    | a sus listas asociadas, buscando
+|                        |                 | quienes apuntan a v
+|                        |                 |
+|                        |                 | Elimina v y recorre las listas de 
+| eliminarVertice(v)     |     O(V + E)    | asociadas a los demas vértices para
+|                        |                 | eliminar las referencias que queden
+|                        |                 |
+| subgrafo(vertices)     |    O(Vs + Es)   | Recorre las listas asociadas a vertices
+|                        |                 | y sus arcos 
+
+Leyenda: 
+- Vs =  Vértices seleccionados 
+- Es = Arcos de vértice seleccionados
+
+
+
+
+ 
