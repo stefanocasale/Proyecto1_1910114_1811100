@@ -1,6 +1,8 @@
 # Proyecto1_1910114_1811100
-Nombres: Stefano Casale, Enyerber Silva
-Carnets: 1910114, 1811100
+- Nombres: Stefano Casale, Enyerber Silva
+- Carnets: 1910114, 1811100
+- Universidad Simón Bolívar
+- Trimestre Ene - Mar 2026
 
 # Pasos de Ejecucion
 1. Instalar Kotlin:
@@ -41,11 +43,11 @@ Decidimos agregar un archivo "Main.kt" donde realizamos pruebas para validar y v
 
 # Tabla de complejidad computacional (Big O)
 
-|         Método         |   Complejidad   |              Descipcción
+|         Método         |   Complejidad   |              Descripción
 |------------------------|-----------------|--------------------------------------------------
 | contiene(v)            |       O(1)      | Accede a un elemento del mapa
 | agregarVertice(v)      |       O(1)      | Inserta un elemento al mapa
-| tamano(v)              |       O(1)      | Accede a un puntero del mapa
+| tamano()               |       O(1)      | Accede a un puntero del mapa
 | conectar(desde, hasta) | O(grado(desde)) | Recorre toda la lista asociada a desde, verificando  duplicados
 | obtenerArcosSalida(v)  |       O(1)      | Devuelve la lista asociada a v
 | obtenerArcosEntrada(v) |     O(V + E)    | Recorre todos los vértices y accede a sus listas asociadas, buscando quienes apuntan a v
@@ -54,9 +56,4 @@ Decidimos agregar un archivo "Main.kt" donde realizamos pruebas para validar y v
 
 Leyenda: 
 - Vs =  Vértices seleccionados 
-- Es = Arcos de vértice seleccionados
-
-
-
-
- 
+- Es = Arcos entre los vértices seleccionados
