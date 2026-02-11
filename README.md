@@ -18,6 +18,7 @@
     - Desde tu terminal de WSL ejecuta el siguiente comando:
         - kotlin -cp out MainKt
 
+Al compilar se crea una carpeta "out" en tu entorno. Contiene los archivos ya compilados
 
 # Decisiones de Implementacion
 En este proyecto se tomo la decision de usar MutableMap<T, MutableList<T>> debido a que el mapa representa cada vértice con su lista de sucesores, cumpliendo asi con la representacion de un grafo dirigido por listas de adyacencias. Ademas, fue recomendado a traves del mismo enunciado del proyecto. 
