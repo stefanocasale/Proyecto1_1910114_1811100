@@ -42,29 +42,15 @@ Decidimos agregar un archivo "Main.kt" donde realizamos pruebas para validar y v
 # Tabla de complejidad computacional (Big O)
 
 |         Método         |   Complejidad   |              Descipcción
-|------------------------|-----------------|---------------------------------------
+|------------------------|-----------------|--------------------------------------------------
 | contiene(v)            |       O(1)      | Accede a un elemento del mapa
-|                        |                 |
 | agregarVertice(v)      |       O(1)      | Inserta un elemento al mapa
-|                        |                 |
 | tamano(v)              |       O(1)      | Accede a un puntero del mapa
-|                        |                 |
-|                        |                 | Recorre toda la lista asociada
-| conectar(desde, hasta) | O(grado(desde)) | a desde, verificando
-|                        |                 | duplicados
-|                        |                 |
+| conectar(desde, hasta) | O(grado(desde)) | Recorre toda la lista asociada a desde, verificando  duplicados
 | obtenerArcosSalida(v)  |       O(1)      | Devuelve la lista asociada a v
-|                        |                 |
-|                        |                 | Recorre todos los vértices y accede
-| obtenerArcosEntrada(v) |     O(V + E)    | a sus listas asociadas, buscando
-|                        |                 | quienes apuntan a v
-|                        |                 |
-|                        |                 | Elimina v y recorre las listas de 
-| eliminarVertice(v)     |     O(V + E)    | asociadas a los demas vértices para
-|                        |                 | eliminar las referencias que queden
-|                        |                 |
-| subgrafo(vertices)     |    O(Vs + Es)   | Recorre las listas asociadas a vertices
-|                        |                 | y sus arcos 
+| obtenerArcosEntrada(v) |     O(V + E)    | Recorre todos los vértices y accede a sus listas asociadas, buscando quienes apuntan a v
+| eliminarVertice(v)     |     O(V + E)    | Elimina v y recorre las listas de asociadas a los demas vértices para eliminar las referencias que queden
+| subgrafo(vertices)     |    O(Vs + Es)   | Recorre las listas asociadas a vertices y sus arcos
 
 Leyenda: 
 - Vs =  Vértices seleccionados 
